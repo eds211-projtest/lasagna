@@ -11,7 +11,8 @@ library(tidyverse)
 ```
 
 ```{r}
-ggplot(diamonds, aes(x = carat, y = price)) +
-  geom_point(aes(color = clarity))
+ggplot(diamonds %>% select(carat, price, clarity, color), 
+       aes(x = carat, y = price)) +
+  geom_point(aes(color = clarity, shape = color))
 ```
 
