@@ -13,7 +13,10 @@ library(tidyverse)
 ```{r}
 ggplot(diamonds %>% select(carat, price, clarity, color), 
        aes(x = carat, y = price)) +
-  geom_point(aes(color = clarity, shape = color))blah
+  geom_point(aes(color = clarity, shape = color))
 
+ggplot(diamonds %>% filter(carat > .5 & carat < 2), 
+         aes(x = carat, y = price)) +
+  geom_point(aes(color = clarity, shape = cut))
 ```
 
